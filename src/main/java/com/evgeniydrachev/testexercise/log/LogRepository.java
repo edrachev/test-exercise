@@ -55,7 +55,7 @@ public class LogRepository {
             statement.setString(2, log.getFrom());
             statement.setString(3, log.getTo());
             statement.setTimestamp(4, new Timestamp(log.getWhen().toEpochMilli()));
-            statement.setString(5, log.getText());
+            statement.setString(5, log.getIp());
             statement.execute();
         } catch (SQLException throwables) {
             throw new RuntimeException("Cannot log action", throwables);
